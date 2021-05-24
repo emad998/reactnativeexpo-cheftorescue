@@ -37,16 +37,18 @@ const WelcomeScreen = ({ navigation }) => {
   };
 
   useEffect(() => {
-      auth.onAuthStateChanged(function(user) {
+      const unsubscribe = auth.onAuthStateChanged(function(user) {
           if (user) {
             setUserEmail(user.email)
           } else {
             navigation.replace('Login')
           }
         });
+        return unsubscribe
   }, [])
 
   const grabbingMeal = () => {
+    setAddedText(false)
     axios
       .get("https://www.themealdb.com/api/json/v1/1/random.php")
       .then((res) => {

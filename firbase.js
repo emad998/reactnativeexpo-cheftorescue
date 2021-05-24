@@ -1,15 +1,16 @@
 import * as firebase from 'firebase'
 import "firebase/firestore"
 import "firebase/auth"
+import {API_KEY, AUTH_DOMAIN, PROJECT_ID, STORAGE_BUCKET, MESSAGING_SENDER_ID, APP_ID} from '@env'
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyB8UPhx9ogpUewO07a14d-dHqLVprcBLqg",
-    authDomain: "signal-clone-c9810.firebaseapp.com",
-    projectId: "signal-clone-c9810",
-    storageBucket: "signal-clone-c9810.appspot.com",
-    messagingSenderId: "449243531119",
-    appId: "1:449243531119:web:8b4308538709f099284a9a"
+    apiKey: `${API_KEY}`,
+    authDomain: `${AUTH_DOMAIN}`,
+    projectId: `${PROJECT_ID}`,
+    storageBucket: `${STORAGE_BUCKET}`,
+    messagingSenderId: `${MESSAGING_SENDER_ID}`,
+    appId: `${APP_ID}`
   };
 
 

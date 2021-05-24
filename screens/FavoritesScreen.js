@@ -28,6 +28,9 @@ const FavoritesScreen = ({ navigation, route }) => {
   const [youtubeLink, setYoutubeLink] = useState(null);
   const [deleting, setDeleting] = useState(false);
 
+  
+
+
   useEffect(() => {
     const unsubscribe = db
       .collection("users")
@@ -39,11 +42,13 @@ const FavoritesScreen = ({ navigation, route }) => {
     return unsubscribe;
   }, [deleting]);
 
+
+
+
   const handleShowMeal = (idOfMeal) => {
     axios
       .get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idOfMeal}`)
       .then((res) => {
-          console.log(idOfMeal, res)
         setMealData(res);
         let property = "";
         let ingredientsArray = [];
